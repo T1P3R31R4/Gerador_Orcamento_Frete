@@ -92,6 +92,12 @@ const App: React.FC = () => {
       .substring(0, 15);
   };
 
+  const formatDate = (dateString: string) => {
+    if (!dateString) return '';
+    const [year, month, day] = dateString.split('-');
+    return `${day}/${month}/${year}`;
+  };
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
 
@@ -256,7 +262,7 @@ const App: React.FC = () => {
             <div className="flex gap-4">
               <div className="bg-blue-50 p-3 rounded-lg flex-1">
                 <p className="text-xs font-bold text-blue-400 uppercase mb-1 flex items-center gap-1"><FaCalendarAlt /> Data</p>
-                <p className="font-bold text-gray-700">{new Date(data.dataServico).toLocaleDateString('pt-BR')}</p>
+                <p className="font-bold text-gray-700">{new Date(formatDate(data.dataServico)).toLocaleDateString('pt-BR')}</p>
               </div>
             </div>
 
