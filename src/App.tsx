@@ -176,7 +176,7 @@ const App: React.FC = () => {
           <div className="grid grid-rows-2 gap-4">
             <div>
               <label className="label-padrao">Data</label>
-              <input type="date" name="dataServico" value={data.dataServico} onChange={handleChange} className="input-padrao" />
+              <input type="date" name="dataServico" value={data.dataServico} onChange={handleChange} className="input-padrao w-full" />
             </div>
             <div>
               <label className="label-padrao">Valor Total</label>
