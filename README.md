@@ -1,73 +1,50 @@
-# React + TypeScript + Vite
+# 🚚 Gerador de Orçamento de Frete
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
 
-Currently, two official plugins are available:
+> Uma ferramenta ágil para transportadores autônomos gerarem orçamentos profissionais e enviarem via WhatsApp em segundos.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Preview do Projeto](./preview.png)
 
-## React Compiler
+## 💡 Sobre o Projeto
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+No mercado de transporte autônomo, a informalidade muitas vezes atrapalha o fechamento de negócios. Muitos motoristas enviam preços apenas por texto, passando pouca credibilidade.
 
-## Expanding the ESLint configuration
+Este projeto resolve esse problema entregando uma **Single Page Application (SPA)** onde o usuário preenche os dados do serviço e a aplicação gera instantaneamente uma imagem (JPG) formatada, profissional e pronta para envio.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 🚀 Funcionalidades Principais
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **Geração de Imagem via DOM:** Conversão de componentes HTML/React em imagem para download usando `html-to-image`.
+- **Integração com API do IBGE:** Busca automática de Estados (UFs) e Cidades para evitar erros de digitação e padronizar endereços.
+- **Formatação Automática (Máscaras):** - Moeda (BRL) em tempo real.
+  - Telefone/WhatsApp.
+- **Preview em Tempo Real:** O usuário vê exatamente como o documento ficará enquanto digita.
+- **Design Responsivo:** Interface otimizada para uso em Desktop e Mobile (foco no uso em campo).
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🛠 Tech Stack
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- **Core:** React (Vite) + TypeScript
+- **Estilização:** Tailwind CSS
+- **APIs:** IBGE (Localidades)
+- **Libs:** - `html-to-image` (Renderização de imagem)
+  - `react-icons` (UI Icons)
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📦 Como Rodar Localmente
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Pré-requisitos: Node.js instalado.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+```bash
+# 1. Clone o repositório
+git clone [https://github.com/SEU-USUARIO/gerador-orcamento-frete.git](https://github.com/SEU-USUARIO/gerador-orcamento-frete.git)
+
+# 2. Entre na pasta do projeto
+cd gerador-orcamento-frete
+
+# 3. Instale as dependências
+npm install
+
+# 4. Rode o servidor de desenvolvimento
+npm run dev
