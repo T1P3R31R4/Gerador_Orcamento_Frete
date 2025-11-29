@@ -21,7 +21,6 @@ interface OrcamentoData {
   destinoUF: string;
   destinoCidade: string;
   destinoBairro: string;
-
   dataServico: string;
   valorTotal: string;
   observacoes: string;
@@ -77,7 +76,6 @@ const App: React.FC = () => {
 
   const formatCurrency = (value: string) => {
     const numericValue = value.replace(/\D/g, "");
-
     return (Number(numericValue) / 100).toLocaleString("pt-BR", {
       style: "currency",
       currency: "BRL"
@@ -94,13 +92,14 @@ const App: React.FC = () => {
 
   const formatDate = (dateString: string) => {
     if (!dateString) return '';
-    const [year, month, day] = dateString.split('-');
+    const parts = dateString.split('-');
+    if (parts.length !== 3) return dateString;
+    const [year, month, day] = parts;
     return `${day}/${month}/${year}`;
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
-
     if (name === 'valorTotal') {
       setData(prev => ({ ...prev, [name]: formatCurrency(value) }));
     } else if (name === 'seuContato') {
@@ -175,7 +174,7 @@ const App: React.FC = () => {
 
           <div>
             <label className="label-padrao">Data</label>
-            <input type="date" name="dataServico" value={data.dataServico} onChange={handleChange} className="input-padrao max-w-[22rem]" />
+            <input type="date" name="dataServico" value={data.dataServico} onChange={handleChange} className="input-padrao w-full" />
           </div>
 
           <div>
@@ -190,7 +189,6 @@ const App: React.FC = () => {
 
           <hr className="my-2 border-gray-200" />
 
-          {/* Seus Dados */}
           <div className="grid grid-cols-2 gap-2">
             <div>
               <label className="label-padrao">Seu Nome</label>
@@ -261,7 +259,7 @@ const App: React.FC = () => {
             <div className="flex gap-4">
               <div className="bg-blue-50 p-3 rounded-lg flex-1">
                 <p className="text-xs font-bold text-blue-400 uppercase mb-1 flex items-center gap-1"><FaCalendarAlt /> Data</p>
-                <p className="font-bold text-gray-700">{new Date(formatDate(data.dataServico)).toLocaleDateString('pt-BR')}</p>
+                <p className="font-bold text-gray-700">{formatDate(data.dataServico)}</p>
               </div>
             </div>
 
