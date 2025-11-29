@@ -175,9 +175,9 @@ const App: React.FC = () => {
 
           <div>
             <label className="label-padrao">Data</label>
-            <input type="date" name="dataServico" value={data.dataServico} onChange={handleChange} className="input-padrao" />
+            <input type="date" name="dataServico" value={data.dataServico} onChange={handleChange} className="input-padrao max-w-[22rem]" />
           </div>
-          
+
           <div>
             <label className="label-padrao">Valor Total</label>
             <input type="text" name="valorTotal" value={data.valorTotal} onChange={handleChange} className="input-padrao font-bold text-green-700" placeholder="R$ 0,00" />
