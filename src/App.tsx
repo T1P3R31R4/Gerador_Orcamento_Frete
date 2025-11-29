@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { toJpeg } from 'html-to-image';
-import { FaWhatsapp, FaTruckMoving, FaMapMarkerAlt, FaMoneyBillWave, FaCalendarAlt, FaDownload, FaUser, FaBuilding } from 'react-icons/fa';
+import { FaWhatsapp, FaTruckMoving, FaMapMarkerAlt, FaCalendarAlt, FaUser } from 'react-icons/fa';
 
 interface IBGEUF {
   id: number;
