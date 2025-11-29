@@ -7,7 +7,7 @@
 
 > Uma ferramenta ágil para transportadores autônomos gerarem orçamentos profissionais e enviarem via WhatsApp em segundos.
 
-![Preview do Projeto](./preview.png)
+![Preview do Projeto](./public/preview.png)
 
 ## 💡 Sobre o Projeto
 
