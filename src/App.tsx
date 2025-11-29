@@ -173,15 +173,14 @@ const App: React.FC = () => {
             <input type="text" name="destinoBairro" value={data.destinoBairro} onChange={handleChange} className="input-padrao" placeholder="Bairro (Digite aqui)" />
           </div>
 
-          <div className="grid grid-rows-2 gap-4">
-            <div>
-              <label className="label-padrao">Data</label>
-              <input type="date" name="dataServico" value={data.dataServico} onChange={handleChange} className="input-padrao w-full" />
-            </div>
-            <div>
-              <label className="label-padrao">Valor Total</label>
-              <input type="text" name="valorTotal" value={data.valorTotal} onChange={handleChange} className="input-padrao font-bold text-green-700" placeholder="R$ 0,00" />
-            </div>
+          <div>
+            <label className="label-padrao">Data</label>
+            <input type="date" name="dataServico" value={data.dataServico} onChange={handleChange} className="input-padrao" />
+          </div>
+          
+          <div>
+            <label className="label-padrao">Valor Total</label>
+            <input type="text" name="valorTotal" value={data.valorTotal} onChange={handleChange} className="input-padrao font-bold text-green-700" placeholder="R$ 0,00" />
           </div>
 
           <div>
